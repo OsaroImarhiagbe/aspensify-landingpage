@@ -51,7 +51,7 @@ const Header = () => {
             <div className="px-8 py-2 lex flex-row">
               <div className="hidden md:block">
               <button className="shadow-xl cursor-pointer bg-gradient-to-t from-emerald-600 to-white text-white px-6 py-2 rounded-full font-semibold hover:scale-110 duration-700 easeIn">
-                Watch Demo
+                Watch Demo hello
               </button>
             </div>
              <div onClick={Navhandler} className="block cursor-pointer md:hidden">
