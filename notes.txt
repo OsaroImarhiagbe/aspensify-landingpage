@@ -1,0 +1,58 @@
+ <div
+        className={
+          nav ? "md:hidden fixed left-0 top-0 w-full h-screen bg-black/70" : ""
+        }
+      >
+            <div
+          className={
+            nav
+              ? "fixed left-0 top-0 w-[75%] h-screen bg-[#000000] p-10 ease-in duration-700 rounded-r-2xl"
+              : "fixed left-[-100%] top-0 p-10 ease-out duration-700"
+          }
+        >
+          <div className="flex w-full items-center justify-between">
+            <div>
+                {/* <Image src={icon} alt='logo' width={50} height={50}/> */}
+            </div>
+            <div
+              onClick={Navhandler}
+              className="cursor-pointer"
+            >
+              {/* <FaTimes style={{ color: "#7F60F9" }} size={25}/> */}
+            </div>
+          </div>
+          <div className="border-b border-gray-400 my-4">
+            <p className="w-[85%] text-[#f4f6f9] text-xl  md:w-[90%] py-4">
+            Post the proces.<br/>
+            Blow up your build.<br/>
+            Squad up with devs.
+            </p>
+          </div>
+          <div>
+            <ul className="flex flex-col text-left text-[#f4f6f9] pt-12 uppercase">
+              <li className="p-4 cursor-pointer">
+                <Link className="hover:border-b-2 border-white" onClick={() => setNav(false)} href="/#Home">
+                  Home
+                </Link>
+              </li>
+              <li className="p-4 cursor-pointer">
+                <Link className="hover:border-b-2 border-white" onClick={() => setNav(false)} href="/#features">
+                  Features
+                </Link>
+              </li>
+              <li className="p-4 cursor-pointer">
+                <Link className="hover:border-b-2 border-white" onClick={() => setNav(false)} href="/#testimonials">
+                  Testimonials
+                </Link>
+              </li>
+              <li className="p-4 cursor-pointer">
+                <Link className="hover:border-b-2 border-white" onClick={() => setNav(false)} href="/#team">
+                  Behind Foundry
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+        </div>
+
+        bg-gradient-to-r from-emerald-300 to-emerald-200 bg-clip-text text-transparent block
