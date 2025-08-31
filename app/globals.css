@@ -1,9 +1,21 @@
 @import "tailwindcss";
 
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --font-spacegrotesk: 'Space Grotesk', sans-serif;
+}
+
+/* Base font classes */
+.font-inter {
+  font-family: var(--font-inter);
+}
+
+.font-spacegrotesk {
+  font-family: var(--font-spacegrotesk);
+}
 
 
 body {
   background:#FFF;
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
 }

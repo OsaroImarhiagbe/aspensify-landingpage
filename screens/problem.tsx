@@ -15,7 +15,7 @@ export default function ProblemSolution() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Budgeting shouldn’t feel stressful
+          Budgeting shouldn&apos;t feel stressful
         </motion.h2>
         <p className="text-lg text-gray-600 mb-8">
           Most apps are rigid and overwhelming. Aspensify adapts with you—job

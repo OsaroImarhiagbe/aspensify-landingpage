@@ -56,3 +56,42 @@
         </div>
 
         bg-gradient-to-r from-emerald-300 to-emerald-200 bg-clip-text text-transparent block
+
+
+              {/* Left Wing Bubbles (staggered) */}
+      {/* <div className="hidden md:block absolute left-6 top-32 z-10">
+         {leftbubbles.map((bubble, index) => (
+        <motion.div
+          key={index}
+          className={`absolute ${bubble.top} w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-xl`}
+          initial={{ opacity: 0, y: 40, scale: 0.8 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{
+            delay: index * 0.3, // stagger effect
+            duration: 0.6,
+            ease: "easeOut",
+          }}
+        >
+          <Image src={bubble.src} alt={bubble.alt} width={28} height={28} />
+        </motion.div>
+      ))}
+      </div> */}
+
+      {/* Right Wing Bubbles (staggered) */}
+      {/* <div className="hidden md:block absolute right-6 top-32 z-10">
+      {rightbubbles.map((bubble, index) => (
+        <motion.div
+          key={index}
+          className={`absolute ${bubble.top} w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-xl`}
+          initial={{ opacity: 0, y: 40, scale: 0.8 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{
+            delay: index * 0.3, // stagger effect
+            duration: 0.6,
+            ease: "easeOut",
+          }}
+        >
+          <Image src={bubble.src} alt={bubble.alt} width={28} height={28} />
+        </motion.div>
+      ))}
+    </div> */}
