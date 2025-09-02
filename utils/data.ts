@@ -1,8 +1,20 @@
 export const header = [
-    {name:'Home'},
-    {name:'About'},
-    {name:'Demo'},
-    {name:'Meet The Developer'},
+    {
+      name:'Home',
+      link:'/#home'
+    },
+    {
+      name:'Features',
+      link:'/#features'
+    },
+    {
+      name:'FAQ',
+      link:'/#faq'
+    },
+    {
+      name:'Meet The Developer',
+      link:'/developer'
+    },
 ]
 
 export const features = [
@@ -51,8 +63,8 @@ export const problem = [
     name: 'Real-Time Expense Tracking',
     subtitle: `Snap photos of receipts for instant categorization, get spending alerts, and watch your budget progress update in real-time across all your accounts`,
     img: '/assets/Receipt.png',
-    width: 200,
-    height: 200
+    width: 300,
+    height: 500
   }
 ]
 

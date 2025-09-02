@@ -30,66 +30,79 @@ export default function AspensifyLanding() {
         </div>
       
       <Header />
-
-
-      {/* Hero Content */}
       <div className="relative z-20 text-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
-        <span className="inline-block bg-black text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
-          🚀 Budget Tracking Reimagined
-        </span>
+        <motion.span
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{opacity:1,x:0}}
+        transition={{ duration: 0.8, ease: "easeInOut",}}
+        className="font-inter inline-block bg-black text-white px-4 py-2 rounded-full text-sm font-bold mb-6">
+          🚀 App releasing soon on iOS & Android
+        </motion.span>
 
-        <h1 className="font-spacegrotesk font-bold text-4xl md:text-6xl text-gray-900 mb-6 leading-tight">
+        <motion.h1
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{opacity:1,x:0}}
+        transition={{ duration: 0.8, ease: "easeInOut",}}
+        className="font-spacegrotesk font-bold text-4xl md:text-6xl text-gray-900 mb-6 leading-tight">
          Smart Budgeting for
           <span className="block">
             Life&apos;s Big Changes
           </span>
-        </h1>
+        </motion.h1>
 
-        <p className="font-sans text-lg md:text-xl text-gray-900 mb-8 leading-relaxed max-w-2xl mx-auto">
+        <motion.p
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{opacity:1,x:0}}
+        transition={{ duration: 0.8, ease: "easeInOut",}}
+        className="font-inter text-lg md:text-xl text-gray-900 mb-8 leading-relaxed max-w-2xl mx-auto">
           Finally, a budget app that adapts to your actual life situations. Whether you&apos;re unemployed, 
           having a baby, or planning a wedding — Aspensify helps you budget with context that matters.
-        </p>
-
-        {/* Life Situations Tags */}
+        </motion.p>
         <div className="flex flex-wrap gap-3 mb-8 justify-center">
           {lifeSituations.map((situation, index) => (
-            <div 
+            <motion.div 
+          initial={{ opacity: 0, x: 100, scale: 0.8 }}
+          whileInView={{ opacity: 1, x: 0, scale: 1 }}
+          transition={{
+            delay: index * 0.1,
+            duration: 0.5,
+            ease: "easeOut",
+          }}
               key={index}
-              className="cursor-pointer flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-emerald-200 
+              className="font-inter cursor-pointer flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-emerald-200 
                         px-3 py-2 rounded-full text-sm font-medium text-gray-700 
                         hover:bg-emerald-50 hover:border-emerald-300 transition-all duration-200 
                         hover:scale-105 cursor-default shadow-sm"
             >
               {situation.icon}
               {situation.text}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
 
       <div className="relative w-full flex items-center justify-center">
-      <motion.div
+      <motion.div 
         initial={{ scale: 0.9, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <Image
-          src="/assets/Aspensify.png"
+          src="/assets/Aspensify.webp"
           alt="phone"
           height={600}
           width={300}
-          className="relative"
+          style={{ width: 'auto', height: 'auto' }}
+          priority
         />
       </motion.div>
-
-      {/* Floating Cards - Improved positioning and wider cards */}
       <motion.div
         className="absolute top-10 left-[5%] sm:left-[12%] md:left-[25%] lg:left-[30%] xl:left-[35%] w-36 sm:w-44 md:w-40 p-3 bg-white rounded-2xl shadow-2xl z-0"
         initial={{ opacity: 0, x: -100 }}
         whileInView={{opacity:1,x:0}}
         transition={{ duration: 0.8, ease: "easeInOut",}}
       >
-        <p className="text-sm sm:text-base font-medium text-gray-700 whitespace-nowrap">💳 Track Spending</p>
+        <p className="font-inter text-sm sm:text-base font-medium text-gray-700 whitespace-nowrap">💳 Track Spending</p>
       </motion.div>
 
       <motion.div
@@ -98,7 +111,7 @@ export default function AspensifyLanding() {
         whileInView={{opacity:1,x:0}}
         transition={{ duration: 0.8, ease: "easeInOut",}}
       >
-        <p className="text-sm sm:text-base font-medium text-gray-700 whitespace-nowrap">📈 Smart Insights</p>
+        <p className="font-inter text-sm sm:text-base font-medium text-gray-700 whitespace-nowrap">📈 Smart Insights</p>
       </motion.div>
 
       <motion.div
@@ -107,7 +120,7 @@ export default function AspensifyLanding() {
         whileInView={{opacity:1,x:0}}
         transition={{ duration: 0.8, ease: "easeInOut",}}
       >
-        <p className="text-sm sm:text-base font-medium text-gray-700 whitespace-nowrap">👫 Couple Budgeting</p>
+        <p className="font-inter text-sm sm:text-base font-medium text-gray-700 whitespace-nowrap">👫 Couple Budgeting</p>
       </motion.div>
 
       <motion.div
@@ -116,7 +129,7 @@ export default function AspensifyLanding() {
         whileInView={{opacity:1,x:0}}
         transition={{ duration: 0.8, ease: "easeInOut",}}
       >
-        <p className="text-sm sm:text-base font-medium text-gray-700 whitespace-nowrap">🏡 Save for Goals</p>
+        <p className="font-inter text-sm sm:text-base font-medium text-gray-700 whitespace-nowrap">🏡 Save for Goals</p>
       </motion.div>
       </div>
     </section>

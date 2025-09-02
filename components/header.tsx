@@ -6,18 +6,18 @@ import { useRouter } from "next/navigation"
 import Link from 'next/link';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-      const [nav, setNav] = useState(false);
-    const router = useRouter();
+  const router = useRouter();
 
-    const Navhandler = useCallback(() => {
-      setNav(!nav) 
-    },[nav]);
+
 
 
     const handleNav = useCallback(() => {
-        router.push('/#CTA')
+        router.push('/developer')
     },[router])
-   
+    const handleWait = useCallback(() => {
+      setIsMenuOpen((prev) => !prev)
+      router.push('/#cta')
+    },[router])
     return (
       
            
@@ -29,7 +29,7 @@ const Header = () => {
             <div className="py-2 px-2">
             {/* <Image src={icon} alt="app icon" width={50} height={50}/> */}
             </div>
-            <h1 className="font-spacegrotesk text-black md:text-sm sm:text-base md:text-lg lg:text-xl font-medium">Aspensify</h1>
+            <h1 className="font-spacegrotesk text-lg text-black md:text-sm sm:text-base md:text-xl lg:text-2xl font-medium">Aspensify</h1>
             </div>
             {/*Links */}
            <div className="hidden md:block">
@@ -38,8 +38,11 @@ const Header = () => {
                   header.map((item,idx) => {
                     return (
                       <ul key={idx}>
-                        <li className='font-sans'>
-                          <Link href='#' className="font-spacegrotesk  text-black hover:text-emerald-600 transition-colors font-medium">{item.name}</Link>
+                        <li>
+                          {
+                            item.link === '/developer' ? <button onClick={handleNav} className='cursor-pointer text-black font-spacegrotesk hover:text-emerald-600 transition-colors font-medium'>{item.name}</button> : 
+                            <Link href={item.link} className="font-spacegrotesk  text-black hover:text-emerald-600 transition-colors font-medium">{item.name}</Link>
+                          }
                         </li>
                       </ul>
                     );
@@ -49,17 +52,17 @@ const Header = () => {
             </div>
             <div className="px-8 py-2 lex flex-row">
               <div className="hidden md:block">
-              <button className="font-spacegrotesk shadow-xl cursor-pointer bg-emerald-500 text-white px-6 py-2 rounded-full font-bold hover:scale-110 duration-700 easeIn">
-                Watch Demo
+              <button onClick={handleWait} className="font-spacegrotesk shadow-xl cursor-pointer bg-emerald-500 text-white px-6 py-2 rounded-full font-bold hover:scale-110 duration-700 easeIn">
+                Join the Waitlist
               </button>
             </div>
-             <div onClick={Navhandler} className="block cursor-pointer md:hidden">
+             <div className="block cursor-pointer md:hidden">
              <div className="md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="text-gray-700 hover:text-purple-600 transition-colors"
               >
-                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                {isMenuOpen ? <X className="cursor-pointer h-6 w-6" /> : <Menu className="cursor-pointer h-6 w-6" />}
               </button>
             </div>
             </div>  
@@ -72,15 +75,18 @@ const Header = () => {
                   header.map((item,idx) => {
                     return (
                       <ul key={idx}>
-                        <li className='font-sans'>
-                          <Link href='#' className="font-spacegrotesk  block px-3 py-2 text-black hover:text-purple-600 font-medium">{item.name}</Link>
+                        <li className='px-3 py-2'>
+                         {
+                            item.link === '/developer' ? <button onClick={handleNav} className='cursor-pointer text-black font-spacegrotesk hover:text-emerald-600 transition-colors font-medium'>{item.name}</button> : 
+                            <Link href={item.link} className="font-spacegrotesk  text-black hover:text-emerald-600 transition-colors font-medium">{item.name}</Link>
+                          }
                         </li>
                       </ul>
                     );
                   })
                 }
-                <button className="w-full mt-4 bg-emerald-500 text-white px-6 py-2 rounded-full font-bold shadow-2xl">
-                  Watch Demo
+                <button onClick={handleWait} className="w-full mt-4 bg-emerald-500 text-white px-6 py-2 rounded-full font-bold shadow-2xl">
+                  Join the Waitlist
                 </button>
               </div>
             </div>

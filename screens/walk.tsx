@@ -32,7 +32,7 @@ export default function Walkthrough() {
                 alt={item.name}
                 width={item.width}
                 height={item.height}
-                style={{ width: `${item.width}px`, height: `${item.height}` }}
+                style={{ width: '100%', height: 'auto' }} 
                 priority
                 quality={100}
                 className="w-full h-auto object-cover mx-auto"
@@ -42,26 +42,26 @@ export default function Walkthrough() {
               {item.name === "AI-Tailored Budgets & Goals" && (
                 <>
                   <div className="absolute top-4 left-4 p-2 bg-white rounded-lg shadow-lg w-24 text-center">
-                    <p className="text-xs font-semibold text-gray-800">Credit</p>
-                    <p className="text-sm text-gray-500">45%</p>
+                    <p className="font-inter text-xs font-semibold text-gray-800">Credit</p>
+                    <p className="font-inter text-sm text-gray-500">45%</p>
                   </div>
                   <div className="absolute top-1/3 right-4 p-2 bg-white rounded-lg shadow-lg w-24 text-center">
-                    <p className="text-xs font-semibold text-gray-800">Debit</p>
-                    <p className="text-sm text-gray-500">55%</p>
+                    <p className="font-inter text-xs font-semibold text-gray-800">Debit</p>
+                    <p className="font-inter text-sm text-gray-500">55%</p>
                   </div>
                   <div className="absolute bottom-4 left-1/2 -translate-x-1/2 p-2 bg-white rounded-lg shadow-lg w-28 text-center">
-                    <p className="text-xs font-semibold text-gray-800">Savings</p>
-                    <p className="text-sm text-gray-500">20%</p>
+                    <p className="font-inter text-xs font-semibold text-gray-800">Savings</p>
+                    <p className="font-inter text-sm text-gray-500">20%</p>
                   </div>
                 </>
               )}
             </div>
 
             <div className="p-4 md:p-6 text-left">
-              <h4 className="text-gray-900 text-lg md:text-xl font-semibold mb-2 leading-tight">
+              <h4 className="font-spacegrotesk text-center text-gray-900 text-lg md:text-xl font-semibold mb-2 leading-tight">
                 {item.name}
               </h4>
-              <p className="text-gray-900 text-sm md:text-base leading-relaxed">
+              <p className="font-inter text-gray-900 text-sm md:text-base leading-relaxed">
                 {item.subtitle}
               </p>
             </div>

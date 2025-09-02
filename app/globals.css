@@ -9,7 +9,9 @@
 .font-inter {
   font-family: var(--font-inter);
 }
-
+.html{
+  scroll-behavior:smooth;
+}
 .font-spacegrotesk {
   font-family: var(--font-spacegrotesk);
 }
