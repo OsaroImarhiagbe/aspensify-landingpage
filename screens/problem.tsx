@@ -1,7 +1,7 @@
 'use client'
 
 import { AlertCircle, Clock, CreditCard, BarChart2 } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 
 export default function ProblemSection() {
   const problems = [
