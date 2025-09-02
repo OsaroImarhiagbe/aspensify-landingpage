@@ -35,7 +35,7 @@ export default function AspensifyLanding() {
         initial={{ opacity: 0, x: 100 }}
         whileInView={{opacity:1,x:0}}
         transition={{ duration: 0.8, ease: "easeInOut",}}
-        className="font-inter inline-block bg-black text-white px-4 py-2 rounded-full text-sm font-bold mb-6">
+        className="font-spacegrotesk inline-block bg-black text-white px-4 py-2 rounded-full text-sm font-bold mb-6">
           🚀 App releasing soon on iOS & Android
         </motion.span>
 
