@@ -8,6 +8,7 @@ const CoreFeatures = lazy(() => import('@/screens/features'));
 const Walkthrough = lazy(() => import('@/screens/walk'));
 const CTASection = lazy(() => import('@/screens/cta'));
 const FAQSection = lazy(() => import('@/screens/faq'));
+const Problem = lazy(() => import('@/screens/problem'))
 const Footer = lazy(() => import('@/screens/footer'));
 
 export default function Home() {
@@ -16,7 +17,9 @@ export default function Home() {
       <Suspense fallback={<div className="h-screen flex items-center justify-center">Loading...</div>}>
         <Hero />
       </Suspense>
-
+      <Suspense fallback={<div className="flex items-center justify-center py-10">Loading...</div>}>
+        <Problem />
+      </Suspense>
       <Suspense fallback={<div className="flex items-center justify-center py-10">Loading features...</div>}>
         <CoreFeatures />
       </Suspense>

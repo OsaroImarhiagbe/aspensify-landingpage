@@ -1,6 +1,7 @@
 'use client'
 import { FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import Link from 'next/link'
+import { header } from "@/utils/data";
 import { useRouter } from "next/navigation";
 
 export default function Footer() {
@@ -20,18 +21,20 @@ export default function Footer() {
           {/* Navigation */}
           <div className="flex flex-col space-y-3">
             <h3 className="font-spacegrotesk text-lg text-gray-600 font-semibold">Quick Links</h3>
-            <Link href="/#home" className="font-inter text-gray-600 hover:text-emerald-600 transition">
-              Home
-            </Link>
-            <Link href="/#about" className="font-inter text-gray-600 hover:text-emerald-200 transition">
-              Features
-            </Link>
-            <Link href="/#demo" className="font-inter text-gray-600 hover:text-emerald-200 transition">
-              FAQ
-            </Link>
-            <Link href="/#developer" className="font-inter text-gray-600 hover:text-emerald-200 transition">
-              Meet The Developer
-            </Link>
+            {
+                  header.map((item,idx) => {
+                    return (
+                      <ul key={idx}>
+                        <li>
+                         {
+                            item.link === '/developer' ? <button onClick={() => router.push('/developer')} className='cursor-pointer text-black font-spacegrotesk hover:text-emerald-600 transition-colors font-medium'>{item.name}</button> : 
+                            <Link href={item.link} className="font-spacegrotesk  text-black hover:text-emerald-600 transition-colors font-medium">{item.name}</Link>
+                          }
+                        </li>
+                      </ul>
+                    );
+                  })
+                }
           </div>
 
 

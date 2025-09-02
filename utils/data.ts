@@ -3,6 +3,10 @@ export const header = [
       name:'Home',
       link:'/#home'
     },
+     {
+      name:'The Budgeting Problem',
+      link:'/#problem'
+    },
     {
       name:'Features',
       link:'/#features'
