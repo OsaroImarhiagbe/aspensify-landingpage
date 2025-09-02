@@ -1,11 +1,10 @@
 'use client'
-import React, { useState } from 'react';
+import React from 'react';
 import { TrendingUp, Users, Baby, Briefcase, Heart, Star } from 'lucide-react';
 import Header from '@/components/header';
 import Image from 'next/image';
-
+import {motion} from 'motion/react'
 export default function AspensifyLanding() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const lifeSituations = [
     { icon: <Briefcase className="w-4 h-4" />, text: "Job Loss" },
@@ -17,7 +16,7 @@ export default function AspensifyLanding() {
   ];
 
   return (
-    <section className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden">
+    <section id='home' className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden">
         <div
          className="absolute inset-x-0 top-10 -z-10 flex transform-gpu justify-center overflow-hidden blur-3xl"
         >
@@ -31,80 +30,108 @@ export default function AspensifyLanding() {
         </div>
       
       <Header />
-      {/* Left Wing Bubbles (staggered) */}
-      <div className="hidden md:block absolute left-6 top-32 z-10">
-        <div className="absolute top-0 left-0 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-xl">
-          <Image src="/assets/budget.png" alt="budget" width={28} height={28} />
-        </div>
-        <div className="absolute top-32 left-20 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-xl">
-          <Image src="/assets/budget.png" alt="income" width={28} height={28} />
-        </div>
-        <div className="absolute top-64 left-40 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-xl">
-          <Image src="/assets/budget.png" alt="savings" width={28} height={28} />
-        </div>
-      </div>
-
-      {/* Right Wing Bubbles (staggered) */}
-      <div className="hidden md:block absolute right-6 top-32 z-10">
-        <div className="absolute top-0 right-0 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-xl">
-          <Image src="/assets/budget.png" alt="budget" width={28} height={28} />
-        </div>
-        <div className="absolute top-32 right-20 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-xl">
-          <Image src="/assets/budget.png" alt="income" width={28} height={28} />
-        </div>
-        <div className="absolute top-64 right-40 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-xl">
-          <Image src="/assets/budget.png" alt="savings" width={28} height={28} />
-        </div>
-      </div>
-
-      {/* Hero Content */}
       <div className="relative z-20 text-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
-        <span className="inline-block bg-black text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
-          🚀 Budget Tracking Reimagined
-        </span>
+        <motion.span
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{opacity:1,x:0}}
+        transition={{ duration: 0.8, ease: "easeInOut",}}
+        className="font-inter inline-block bg-black text-white px-4 py-2 rounded-full text-sm font-bold mb-6">
+          🚀 App releasing soon on iOS & Android
+        </motion.span>
 
-        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-          Smart Finance for a Secure and 
+        <motion.h1
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{opacity:1,x:0}}
+        transition={{ duration: 0.8, ease: "easeInOut",}}
+        className="font-spacegrotesk font-bold text-4xl md:text-6xl text-gray-900 mb-6 leading-tight">
+         Smart Budgeting for
           <span className="block">
-            Worry Free Future
+            Life&apos;s Big Changes
           </span>
-        </h1>
+        </motion.h1>
 
-        <p className="text-lg md:text-xl text-gray-900 mb-8 leading-relaxed max-w-2xl mx-auto">
+        <motion.p
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{opacity:1,x:0}}
+        transition={{ duration: 0.8, ease: "easeInOut",}}
+        className="font-inter text-lg md:text-xl text-gray-900 mb-8 leading-relaxed max-w-2xl mx-auto">
           Finally, a budget app that adapts to your actual life situations. Whether you&apos;re unemployed, 
           having a baby, or planning a wedding — Aspensify helps you budget with context that matters.
-        </p>
-
-        {/* Life Situations Tags */}
+        </motion.p>
         <div className="flex flex-wrap gap-3 mb-8 justify-center">
           {lifeSituations.map((situation, index) => (
-            <div 
+            <motion.div 
+          initial={{ opacity: 0, x: 100, scale: 0.8 }}
+          whileInView={{ opacity: 1, x: 0, scale: 1 }}
+          transition={{
+            delay: index * 0.1,
+            duration: 0.5,
+            ease: "easeOut",
+          }}
               key={index}
-              className="cursor-pointer flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-emerald-200 
+              className="font-inter cursor-pointer flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-emerald-200 
                         px-3 py-2 rounded-full text-sm font-medium text-gray-700 
                         hover:bg-emerald-50 hover:border-emerald-300 transition-all duration-200 
                         hover:scale-105 cursor-default shadow-sm"
             >
               {situation.icon}
               {situation.text}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
 
-      {/* Phone Mockups */}
-      <div className="relative z-20 mt-16 flex flex-col md:flex-row items-center justify-center gap-8">
-        {[1, 2, 3].map((phone, index) => (
-          <div key={index} className="w-72 h-[560px] bg-gray-900 rounded-[3rem] p-2 transform hover:rotate-0 hover:scale-105 transition-transform duration-500">
-            <div className="w-full h-full bg-white rounded-[2.5rem] overflow-hidden">
-              <div className="h-full flex items-center justify-center">
-                <p className="text-gray-400 font-semibold">Phone {phone}</p>
-              </div>
-            </div>
-          </div>
-        ))}
+      <div className="relative w-full flex items-center justify-center">
+      <motion.div 
+        initial={{ scale: 0.9, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <Image
+          src="/assets/Aspensify.webp"
+          alt="phone"
+          height={600}
+          width={300}
+          style={{ width: 'auto', height: 'auto' }}
+          priority
+        />
+      </motion.div>
+      <motion.div
+        className="absolute top-10 left-[5%] sm:left-[12%] md:left-[25%] lg:left-[30%] xl:left-[35%] w-36 sm:w-44 md:w-40 p-3 bg-white rounded-2xl shadow-2xl z-0"
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{opacity:1,x:0}}
+        transition={{ duration: 0.8, ease: "easeInOut",}}
+      >
+        <p className="font-inter text-sm sm:text-base font-medium text-gray-700 whitespace-nowrap">💳 Track Spending</p>
+      </motion.div>
+
+      <motion.div
+        className="absolute bottom-12 right-[5%] sm:right-[12%] md:right-[25%] lg:right-[30%] xl:right-[35%] w-36 sm:w-44 md:w-40 p-3 bg-white rounded-2xl shadow-2xl z-0"
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{opacity:1,x:0}}
+        transition={{ duration: 0.8, ease: "easeInOut",}}
+      >
+        <p className="font-inter text-sm sm:text-base font-medium text-gray-700 whitespace-nowrap">📈 Smart Insights</p>
+      </motion.div>
+
+      <motion.div
+        className="absolute top-1/3 right-[3%] sm:right-[8%] md:right-[20%] lg:right-[25%] xl:right-[30%] w-40 sm:w-48 md:w-44 p-3 bg-white rounded-2xl shadow-2xl z-0"
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{opacity:1,x:0}}
+        transition={{ duration: 0.8, ease: "easeInOut",}}
+      >
+        <p className="font-inter text-sm sm:text-base font-medium text-gray-700 whitespace-nowrap">👫 Couple Budgeting</p>
+      </motion.div>
+
+      <motion.div
+        className="absolute top-2/3 left-[3%] sm:left-[8%] md:left-[20%] lg:left-[25%] xl:left-[30%] w-36 sm:w-44 md:w-40 p-3 bg-white rounded-2xl shadow-2xl z-0"
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{opacity:1,x:0}}
+        transition={{ duration: 0.8, ease: "easeInOut",}}
+      >
+        <p className="font-inter text-sm sm:text-base font-medium text-gray-700 whitespace-nowrap">🏡 Save for Goals</p>
+      </motion.div>
       </div>
     </section>
   );
 }
-
